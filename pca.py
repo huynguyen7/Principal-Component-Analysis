@@ -3,7 +3,6 @@
 --> DIMENSIONALITY REDUCTION WITH PCA.
 
 *Just an implementation of PCA in Python with Numpy.
-*Author: Huy Nguyen
 
 *SOURCE:
     - Matrix rank: https://www.mathsisfun.com/algebra/matrix-rank.html
@@ -38,7 +37,7 @@ def pca(X, k, log=False):
 
     X = mean_normalization(X)  # Zero mean data.
     covariance_X = covariance_matrix(X)  # Symmetric matrix
-    eig_values_X, eig_vectors_X = np.linalg.eig(covariance_X)  # Note that since covariance_X is symmetric, eigen vectors should orthogonal to each other.
+    eig_values_X, eig_vectors_X = np.linalg.eig(covariance_X)  # Note that since covariance_X is symmetric, eigen vectors should be orthogonal to each others.
 
     """
     The eigenvector with highest eigenvalue is the principal component of the data set.
