@@ -62,9 +62,6 @@ def pca(X, k, log=False):
 
     return Y
 
-def evaluate_variance_retained(X, Y, log=True):
-    return var_retained
-
 # PARAMS
 m = 10000  # Num data points.
 n = 99  # Num features of dataset.
