@@ -47,7 +47,7 @@ def pca(X, k, log=False):
     principal_components = np.array([i[1] for i in principal_components]).transpose()[:, 0:k]
 
     """
-    OUTPUT DATASET (Reduced Dimentions)
+    OUTPUT DATASET (Reduced Dimensions)
     """
     Y = X@principal_components  # output data.
 
