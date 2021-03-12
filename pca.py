@@ -12,13 +12,19 @@
 
 """
 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
-def generate_gauss_data(m=1, n=1):
-    data = [] # Generate random standard norm data
+def generate_gauss_data(m=100, n=2, mu=0.0, sigma=2.0):
+    data = [] 
     for i in range(n):
-        data.append(np.random.randn(m))
+        data.append(np.random.randn(m)*sigma+mu)
+    return np.array(data).transpose()
+
+def generate_uniform_data(m=100, n=2, low=0.0, high=1.0):
+    data = [] 
+    for i in range(n):
+        data.append(np.random.uniform(low, high, size=m))
     return np.array(data).transpose()
 
 def mean_normalization(X):
@@ -40,7 +46,7 @@ def pca(X, k, log=False):
     eig_values_X, eig_vectors_X = np.linalg.eig(covariance_X)  # Note that since covariance_X is symmetric, eigen vectors should be orthogonal to each others.
 
     """
-    The eigenvector with highest eigenvalue is the principal component of the data set.
+    The eigenvector with highest eigenvalue (highest variance) is the principal component of the data set.
     """
     principal_components = list(zip(eig_values_X, eig_vectors_X.transpose()))
     principal_components = sorted(principal_components, key=(lambda x: x[0]), reverse=True)
@@ -62,12 +68,20 @@ def pca(X, k, log=False):
     return Y
 
 # PARAMS
-m = 10000  # Num data points.
-n = 100  # Num features of dataset.
 k = 90 # Num features applied to PCA.
 
-# Generate data.
-X = generate_gauss_data(m, n)
+""" Generate data. """
+#X = generate_gauss_data(
+#        m=10000,  # Num data points.
+#        n=100,  # Num features of dataset.
+#        mu=0.0,
+#        variance=2.0)
+
+X = generate_uniform_data(
+        m=10000,
+        n=100,
+        low=0.0,
+        high=1.0)
 
 # Apply PCA
 Y = pca(X, k, log=True)
