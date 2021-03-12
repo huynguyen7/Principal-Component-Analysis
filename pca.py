@@ -32,7 +32,7 @@ def covariance_matrix(X):  # Data needs to has ~ 0 mean to use this function
 
 def pca(X, k, log=False):
     """
-    Find the covariance matrix Y that minizes redundancy, measured by covariance matrix. In another word, maximize the variances on the diagonal line, and minimize the covariances off the diagonal line the covariance matrix.
+    Find the covariance matrix Y that minimizes redundancy, measured by covariance matrix. In another word, maximize the variances on the diagonal line, and minimize the covariances off the diagonal line the covariance matrix.
     """
 
     X = mean_normalization(X)  # Zero mean data.
