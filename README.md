@@ -1,5 +1,5 @@
 # PRINCIPAL COMPONENT ANALYSIS
-This repository contains implementation for _Principal Component Analysis_ in Python (Used with `Numpy`).
+This repository contains implementation for _Principal Component Analysis_ in Python (used with `Numpy`).
 
 ## Resources
 - PCA-Columbia-Edu: [Click Here](http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf
