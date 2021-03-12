@@ -23,7 +23,7 @@ def generate_gauss_data(m=1, n=1):
 
 def mean_normalization(X):
     for i in range(np.size(X,1)):  # Normalize each feature column.
-        X[:,i] = (X[:,i]-X[:,i].mean()) / (X[:,i].max()-X[:,i].min())
+        X[:,i] = (X[:,i]-X[:,i].mean()) / (X[:,i].std())
     return X
 
 def covariance_matrix(X):  # Data needs to has ~ 0 mean to use this function
@@ -63,8 +63,8 @@ def pca(X, k, log=False):
 
 # PARAMS
 m = 10000  # Num data points.
-n = 99  # Num features of dataset.
-k = 98 # Num features applied to PCA.
+n = 100  # Num features of dataset.
+k = 90 # Num features applied to PCA.
 
 # Generate data.
 X = generate_gauss_data(m, n)
